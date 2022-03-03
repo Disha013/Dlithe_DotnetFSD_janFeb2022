@@ -2,95 +2,562 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
-    <script>
-        
-      function validate()
-      {  
-      var email=document.getElementById("Name").value;
-      var pwd=document.getElementById("Phone number").value;
-        
-      if (Name==null || Name=="")
-      
-      {  
-        alert("Your name can't be blank");  
-        return false;  
-      }
-      
-      else if(phone num.length<10)
-      
-      {  
-        alert("phone num must have 10 digit.");  
-        return false;  
-        }  
-      } 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=>, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-function Check() {
-return validate();      
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+  <title>Bootstrap Example</title>  
+  <meta charset="utf-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body {font-family: Arial, Helvetica, sans-serif;}
+  
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra styles for the cancel button */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  /* Center the image and position the close button */
+  .imgcontainer {
+    text-align: center;
+    margin: 20px 0 12px 0;
+    position: relative;
+  }
+  
+  img.avatar {
+    width: 20%;
+    border-radius: 25%;
+  }
+  
+  .container {
+    padding: 10px;
+  }
+  
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 40px;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+  }
+  </style>
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
 }
 
-</script>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color:#1E90FF;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 </head>
+<body> 
+
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>     
+ </head>  
+ <body> 
 <body>
+ <div class="container">  
+   <div class="jumbotron">  
 
 <h1>Child Plan</h1>
-<p>A child plan is a mix of investment and insurance that helps in the financial planning for a kid's future needs. The insurance aspect ensures that a child remains protected in the event of the unfortunate demise of a parent. The investment avenue allows you to create a sufficient corpus to secure your child’s future. More importantly, child plans come with flexible payouts at crucial milestones that can effectively fund a kid’s education at different stages.</p>
-<img src="https://i.ytimg.com/vi/tcXeMii7flk/maxresdefault.jpg" width="200" height="200">
+<h3><p>A child plan is a mix of investment and insurance that helps in the financial planning for a kid's future 
+  needs. The insurance aspect ensures that a child remains protected in the event of the unfortunate demise of a 
+  parent. The investment avenue allows you to create a sufficient corpus to secure your child’s future. More 
+  importantly, child plans come with flexible payouts at crucial milestones that can effectively fund a kid’s 
+  education at different stages.</p></h3>
+  <div class="container">
 
 
-<h3>Best Pension Options</h3>
-<p><h4><span style="border:5px solid rgb(9, 85, 85)">Insurer pays your premiums in your absence</span> <span style="border: 5px solid rgb(10, 61, 87)">Secure Your Child's Career Goal Invest ₹10K/Month & Get ₹1 Crore on Maturity*</span>  <span style="border: 5px solid rgb(9, 59, 83)">Save upto ₹46,800 in tax under Section 80(C)</span></h4></p><br>
-</div> 
-<hr>
 <div class="container">
+  
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
 
-    <form action="/action_page.php">
-        <div class="form-group">
-          <label for="Name">Your Name:</label>
-          <input type="Name" class="form-control" id="Name" placeholder="Enter Name" >
-        </div>
-        <div class="form-group"><br>
-          <label for="Num">Phone Number:</label><br>
-          <input type="Number" class="form-control" id="Num" placeholder="Enter Phone Number" >
-        </div><br>
-        
-        <button type="submit" class="btn btn-default">View Plans</button>
-      </form>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="https://www.alankitinsurance.com/images-new/Child-plan.jpg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="  https://s3.ap-south-1.amazonaws.com/img1.creditmantri.com/community/article/secure-your-childs-future-with-a-child-insurance-plan.jpg" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="https://www.maxlifeinsurance.com/content/dam/corporate/images/banner/All-plans/Child/Child_Plans_Web_Banner.jpg" alt="New york" style="width:100%;">
+      </div>
     </div>
 
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
 
-    <h1>What is Child Education Plan?</h1>
-<p>A child education plan is designed to help children follow their educational pursuits in whichever field they choose. These plans come with a life cover and opportunities to maximize savings on the payment of due premiums. The lump-sum amount at the end of the policy term ensures that neither you nor your kid struggles for capital when it comes to financing higher education. 
-There are a number of options for you to look at when it comes to saving for your child’s secure future. The following table compares three different types of savings avenues.</p>
+</div><br>
+
+
+<div class="card text-black bg-light mb-3" style="max-width: 80rem;">
  
-
-<h1>Are Child Plans Tax Free?</h1>
-<p>In addition to the death benefit and the annual income benefit, insurance buyers often look for tax saving avenues. It is noteworthy that child plans come with tax benefits like any other insurance scheme. Policyholders can claim deductions on their taxable income through such policies under Sections 80C, 10(10D), and 80DD of the Income Tax Act, 1961. Note that all the proceeds including death and maturity benefits from a child plan are entirely tax free.</p>
-
-
- <h1>Key Features and Benefits of a Child Education Plan</h1>
-<p>A child insurance plan offers a wide range of exciting and unique benefits to the policyholder. It offers a comprehensive maturity benefit along with life cover to financially secure the future of the child. </p>
-<h1>Types of Child Plans</h1>
-<ol>
-<p><li>Single-Premium Child Plan</li><br>
-<li>Regular Premium Child </li><br>
-<li>Child </li><br>
-<li>ULIP</li>
-</ol></p>
-
-<img src="Capture.PNG" width="800" height="300">
+  <div class="card-body">
+   <h2 class="card-title"> TOP Child Plans - 2022</h2>
 
 
-<h1>FAQs</h1>
-<p>Q:Are the proceeds from the child plan tax free? <a href="insurence.html">Q3</a>
+
+
+   <div class="card bg-info text-white">
+    <div class="card-body">TATA AIA</div>
+  </div>
+  <br>
+
+
+  <div class="card bg-info text-white">
+    <div class="card-body">Aditya Birla Sun Life Child Plans</div>
+  </div>
+  <br>
+
+  <div class="card bg-info text-white">
+    <div class="card-body">Aegon Life Child Plans</div>
+  </div>
+  <br>
+
+
+  <div class="card bg-info text-white">
+    <div class="card-body">Aviva Child Plans</div>
+  </div>
+  <br>
+
+
+ 
+  <div class="card bg-info text-white">
+    <div class="card-body">Bajaj Allianz Child Plans</div>
+  </div>
+  <br>
+
+      
+  <div class="card bg-info text-white">
+    <div class="card-body">Canara HSBC Child Plans</div>
+  </div>
+  <br>
+    
+  </div>
+</div>
+
+
+
+
+
+
+  <scipt>
+
+    <center><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Click On To View Plans</button></center>
+
+    <div id="id01" class="modal">
+      
+      <form class="modal-content animate" action="/action_page.php" method="post">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src=" https://www.tncc.edu/sites/default/files/uploads/u76/50-Student-Support.png" alt="Avatar" class="avatar">
+        </div>
+    <center><h3>Nothing Is More Important Than Securing Your Child's Future</h3></center>
+<center><h4>Invest ₹10k/month your child will get ₹1 Cr Tax Free*</h4></center>
+        <div class="container">
+          <label for="uname"><b>Name</b></label>
+          <input type="text" placeholder="Enter Name" name="name" required>
+    
+          <label for="psw"><b>PhoneNumber</b></label>
+          <input type="password" placeholder="Enter PhoneNumber" name="Number" required>
+            
+          <button type="submit">View</button>
+          <center> <h4>By clicking on "View Plans" you agree to our Privacy Policy and Terms of use
+            Tax benefit is subject to changes in tax laws</h4></center>
+      
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+    
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
   
+        </div>
+      </form>
+    </div>
+    
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script><br>
+    
+
+
+
+    
+    <br><div class="row">
+      <div class="column">
+        <div class="card">
+          <p class="card-text">Insurer pays your premiums in your absence</p>
+          
+        </div>
+      </div>
+       
+   
+      
+      
+      <div class="column">
+        <div class="card">
+          <p class="card-text">Invest ₹10K/Month & Get ₹1 Crore on Maturity*
+          </p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <p class="card-text">Save upto ₹46,800 in tax under Section 80(C)</p>
+         
+        </div>
+      </div>
+      
+      
+      <div class="column">
+        <div class="card">
+          <p class="card-text">Child gets Monthly income to meet the regular expenses</p>
+         
+        </div>
+      </div><br>
+      <br>
+      <br>
+      <br>
+      
+      
+      
+    
+
+    <br><div class="container">
+      <div class="price-box">
+        <div class="row">
+          <div class="col-sm-6">
+                <form class="form-horizontal form-pricing" role="form">
+
+                  <div class="price-slider">
+                    <h4 class="great">Amount</h4>
+                    <span>Minimum $100K is required</span>
+                    <div class="col-sm-12">
+                      <div id="slider_amirol"></div>
+                    </div>
+                  </div>
+                  <div class="price-slider">
+                    <h4 class="great">Duration</h4>
+                    <span>Please choose one</span>
+                    <div class="btn-group btn-group-justified">
+                      <div class="btn-group btn-group-lg">
+                        <button type="button" class="btn btn-primary btn-lg btn-block month active-month selected-month" id='24month'>24 Months</button>
+                      </div>
+                      <div class="btn-group btn-group-lg">
+                        <button type="button" class="btn btn-primary btn-lg btn-block month" id='18month'>18 Months</button>
+                      </div>
+                      <div class="btn-group btn-group-lg">
+                        <button type="button" class="btn btn-primary btn-lg btn-block month" id='12month'>12 Months</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="price-slider">
+                    <h4 class="great">Term</h4>
+                    <span>Please choose one</span>
+                      <input name="sliderVal" type="hidden" id="sliderVal" value='0' readonly="readonly" />
+                <input name="month" type="hidden" id="month" value='24month' readonly="readonly" />
+                <input name="term" type="hidden" id="term" value='quarterly' readonly="readonly" />
+                      <div class="btn-group btn-group-justified">
+                        <div class="btn-group btn-group-lg">
+                    <button type="button" class="btn btn-primary btn-lg btn-block term active-term selected-term" id='quarterly'>Quarterly</button>
+                  </div>
+                        <div class="btn-group btn-group-lg">
+                          <button type="button" class="btn btn-primary btn-lg btn-block term" id='monthly'>Monthly</button>
+                  </div>
+                        <div class="btn-group btn-group-lg">
+                          <button type="button" class="btn btn-primary btn-lg btn-block term" id='weekly'>Weekly</button>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="price-form">
+
+                  <div class="form-group">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <label for="amount_amirol" class="control-label">Annually ($): </label>
+                          <span class="help-text">Amount that you need to pay</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="hidden" id="amount_amirol" class="form-control">
+                            <!-- <p class="price lead" id="total"></p> -->
+                            <input class="price lead" name="totalprice" type="text" id="total" disabled="disabled" style="" />
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <label for="amount_amirol" class="control-label">Monthly ($): </label>
+                          <span class="help-text">Amount that you need to pay</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="hidden" id="amount_amirol" class="form-control">
+                            <!-- <p class="price lead" id="total12"></p> -->
+                            <input class="price lead" name="totalprice12" type="text" id="total12" disabled="disabled" style="" />
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <label for="amount_amirol" class="control-label">Weekly ($): </label>
+                          <span class="help-text">Amount that you need to pay</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="hidden" id="amount_amirol" class="form-control">
+                            <!-- <p class="price lead" id="total52"></p> -->
+                            <input class="price lead" name="totalprice52" type="text" id="total52" disabled="disabled" style="" />
+                        </div>
+                    </div>
+                    </div>
+                    <div style="margin-top:30px"></div>
+                    <hr class="style">
+
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Proceed <span class="glyphicon glyphicon-chevron-right"></span></button>
+                      </div>
+                  </div>
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                          <img src="https://github.com/AmirolAhmad/Bootstrap-Calculator/blob/master/images/payment.png?raw=true" class="img-responsive payment" />
+                      </div>
+                    </div>
+
+                  </div>
+
+                </form>
+            </div>
+            <p class="text-center" style="padding-top:10px;font-size:12px;color:#2c3e50;font-style:italic;"> <a href="https://twitter.com/AmirolAhmad" target="_blank"></a></p>
+        </div>
+
+          </div>
+
+      </div>
+      
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+  
+  
+ 
+  <h1>Are Child Plans Tax Free?</h1>
+  <h4><p>In addition to the death benefit and the annual income benefit, insurance buyers often look 
+    for tax saving avenues. It is noteworthy that child plans come with tax benefits like any other 
+    insurance scheme. Policyholders can claim deductions on their taxable income through such policies 
+    under Sections 80C, 10(10D), and 80DD of the Income Tax Act, 1961. Note that all the proceeds 
+    including death and maturity benefits from a child plan are entirely tax free.</h4></p>
+  
+  
+   <h1>Key Features and Benefits of a Child Education Plan</h1>
+  <p><h4>A child insurance plan offers a wide range of exciting and unique benefits to the policyholder. 
+    It offers a comprehensive maturity benefit along with life cover to financially secure the future of 
+    the child.</h4> </p>
+  <center><h1>Types of Child Plans</h1>
+  <ol><p>
+    <h4>
+  <li>Single-Premium Child Plan</li><br>
+  <li>Regular Premium Child </li><br>
+  <li>Child </li><br>
+  <li>ULIP</li>
+  </ol></p></h4></center></br>
+  
+  
+
+  <center>
+  <br><h1>FAQs</h1>
+ <h4> <p>Q:Are the proceeds from the child plan tax free? <a href="insurence.html">Q3</a></h4>
+  
+</center>
+</p>
 </body>
 </html>
